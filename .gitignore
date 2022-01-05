@@ -1,4 +1,7 @@
 # by default exclude everything
 /*
-
 !.gitignore
+
+# include i3 files
+!i3/
+!i3status/

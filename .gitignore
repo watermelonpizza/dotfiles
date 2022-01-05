@@ -8,3 +8,6 @@
 
 # inlcude powershell submodule
 !powershell/
+
+# include oh-my-posh submodule
+!oh-my-posh/

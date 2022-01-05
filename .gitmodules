@@ -1,3 +1,6 @@
 [submodule "powershell"]
 	path = powershell
 	url = git@gist.github.com:baf20fde274ab55dd595f63b6b1d6954.git
+[submodule "oh-my-posh"]
+	path = oh-my-posh
+	url = git@gist.github.com:c87c08ac35f7c0a4c6b5c0abee03b7be.git

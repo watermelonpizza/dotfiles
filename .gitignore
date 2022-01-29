@@ -15,6 +15,9 @@
 # include rofi files
 !rofi/
 
+#include htop files
+!htop/
+
 # inlcude powershell submodule
 !powershell/
 

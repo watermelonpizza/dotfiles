@@ -12,6 +12,9 @@
 # include picom files
 !picom/
 
+# include rofi files
+!rofi/
+
 # inlcude powershell submodule
 !powershell/
 

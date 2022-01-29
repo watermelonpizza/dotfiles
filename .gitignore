@@ -6,6 +6,9 @@
 !i3/
 !i3status/
 
+# include alacritty files
+!alacritty/
+
 # inlcude powershell submodule
 !powershell/
 

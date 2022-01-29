@@ -9,6 +9,9 @@
 # include alacritty files
 !alacritty/
 
+# include picom files
+!picom/
+
 # inlcude powershell submodule
 !powershell/
 

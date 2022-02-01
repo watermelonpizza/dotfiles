@@ -2,6 +2,9 @@
 /*
 !.gitignore
 
+# make sure we don't include outself...
+._dotfiles
+
 # don't exclude config, default exclude everything inside
 !.config
 .config/*

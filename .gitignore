@@ -8,6 +8,12 @@
 # include .gitconfig
 !.gitconfig
 
+# include gnupg config files
+!.gnupg
+.gnupg/*
+!.gnupg/gpg.conf
+!.gnupg/gpg-agent.conf
+
 # include X11 config
 !.Xresources
 

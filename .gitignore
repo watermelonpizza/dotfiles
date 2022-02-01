@@ -2,24 +2,28 @@
 /*
 !.gitignore
 
+# don't exclude config, default exclude everything inside
+!.config
+.config/*
+
 # include i3 files
-!i3/
-!i3status/
+!.config/i3/
+!.config/i3status/
 
 # include alacritty files
-!alacritty/
+!.config/alacritty/
 
 # include picom files
-!picom/
+!.config/picom/
 
 # include rofi files
-!rofi/
+!.config/rofi/
 
 #include htop files
-!htop/
+!.config/htop/
 
 # inlcude powershell submodule
-!powershell/
+!.config/powershell/
 
 # include oh-my-posh submodule
-!oh-my-posh/
+!.config/oh-my-posh/

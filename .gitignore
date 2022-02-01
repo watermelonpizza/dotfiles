@@ -5,6 +5,9 @@
 # make sure we don't include ourself...
 ._dotfiles
 
+# include .gitconfig
+!.gitconfig
+
 # include X11 config
 !.Xresources
 

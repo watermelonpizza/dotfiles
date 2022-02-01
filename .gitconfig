@@ -1,0 +1,8 @@
+[user]
+	name = Daniel Miller
+	email = watermelonpizza@melonstudios.net
+	signingKey = 0x931414EEC3F436AA
+[commit]
+	gpgSign = true
+[init]
+	defaultBranch = main

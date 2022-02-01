@@ -2,8 +2,11 @@
 /*
 !.gitignore
 
-# make sure we don't include outself...
+# make sure we don't include ourself...
 ._dotfiles
+
+# include X11 config
+!.Xresources
 
 # don't exclude config, default exclude everything inside
 !.config

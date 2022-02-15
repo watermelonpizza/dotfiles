@@ -1,0 +1,32 @@
+#!/bin/pwsh -noprofile
+
+[CmdletBinding()]
+param (
+    [Alias("D")]
+    [Parameter()]
+    [String]
+    $DeviceName = "wlp3s0",
+
+    # Template
+    [Alias("t")]
+    [Parameter()]
+    [String]
+    $Template = "<essid> <ipaddr>"
+)
+
+$ConnectionTSV = nmcli connection show --active | ForEach-Object {
+    $_.Split("  ", [System.StringSplitOptions]::RemoveEmptyEntries).Trim() |
+    Join-String -Separator `t
+}
+
+$Connections = $ConnectionTSV | ConvertFrom-Csv -Delimiter `t
+$WiFiName = $Connections | ForEach-Object {
+    if ($_.DEVICE -eq $DeviceName) {
+        $_.NAME
+    }
+} | Select-Object -First 1
+
+$IPAddressMatches = nmcli device show $DeviceName | select-string -AllMatches "IP4.ADDRESS\[1\]\:\s+([\w\./]+)"
+$IPAddress = $IPAddressMatches.Matches[0].Groups[1].Value
+
+Write-Output $Template.Replace("<essid>", $WiFiName).Replace("<ipaddr>", $IPAddress)

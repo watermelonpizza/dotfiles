@@ -17,6 +17,14 @@
 # include X11 config
 !.Xresources
 
+# include Xmonad config
+!.xmonad
+
+# don't exclude .local/bin, default exclude everything inside
+!.local
+.local/*
+!.local/bin
+
 # don't exclude config, default exclude everything inside
 !.config
 .config/*
@@ -42,3 +50,6 @@
 
 # include oh-my-posh submodule
 !.config/oh-my-posh/
+
+# include xmobar files
+!.config/xmobar/

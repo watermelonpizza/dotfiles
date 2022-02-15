@@ -1,0 +1,4 @@
+#!/bin/bash
+
+lightness=$(light -G | cut -d '.' -f1)
+echo $lightness%

@@ -1,3 +1,5 @@
 Xft.dpi: 192
 Xcursor.theme: breeze_cursors
 Xcursor.size: 48
+# https://wiki.archlinux.org/title/X_Logical_Font_Description
+Xmessage*font: -*-*-*-r-*-*-*-220-*-*-*-*-*-*

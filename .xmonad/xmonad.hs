@@ -20,6 +20,8 @@ import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeys, additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Util.SpawnOnce
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Layout.NoBorders
 
 colorScheme = "nord"
 
@@ -185,7 +187,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) =
 gap = 4
 
 myLayout =
-  spacingRaw True (Border 0 0 0 0) True (Border gap gap gap gap) True $
+  smartBorders $ spacingRaw True (Border 0 0 0 0) True (Border gap gap gap gap) True $
     avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
     -- default tiling algorithm partitions the screen into two panes
@@ -257,11 +259,12 @@ main = do
               [ className =? "MPlayer" --> doFloat,
                 className =? "Gimp" --> doFloat,
                 className =? "pinentry-qt" --> doFloat,
+                className =? "1Password" --> doFloat,
                 resource =? "desktop_window" --> doIgnore,
                 resource =? "kdesktop" --> doIgnore
               ],
           ----------------------
-          handleEventHook = mempty,
+          handleEventHook = fullscreenEventHook,
           ----------------------
           logHook =
             dynamicLogWithPP $
@@ -301,5 +304,6 @@ main = do
           startupHook = do
             spawnOnce "nitrogen --restore &"
             spawnOnce "picon &"
+            spawnOnce "trayer --edge top --align right --widthtype request --iconspacing 15 --margin 10 --distance 5 --transparent true --tint 0x282c34 --alpha 0 --height 35 &"
         }
       `additionalKeysP` myExtraKeys
